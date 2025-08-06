@@ -25,21 +25,21 @@ const monsters = {
         hp: 10,
         atk: 2,
         reward: 100,
-        image: './슬라임.png'
+        image: './images/슬라임.png'
     },
     golem: {
         name: '골렘',
         hp: 100,
         atk: 20,
         reward: 1000,
-        image: './골렘.png'
+        image: './images/골렘.png'
     },
     'demon-lord': {
         name: '마왕',
         hp: 1000,
         atk: 100,
         reward: 0, // 마왕은 게임 클리어 조건
-        image: './마왕.png'
+        image: './images/마왕.png'
     }
 };
 
