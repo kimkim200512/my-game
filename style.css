@@ -131,7 +131,7 @@ h2 {
 }
 
 .player-character img {
-    transform: scaleX(-1); /* 플레이어 이미지 좌우반전 */
+    transform: scaleX(1); /* 플레이어 이미지 좌우반전 */
 }
 
 /* 플레이어 공격 애니메이션 */
