@@ -1,0 +1,370 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+    font-size: 2.5rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #5a5a5a;
+}
+
+/* 메인 메뉴 스타일 */
+.main-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.main-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.main-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+.main-btn:active {
+    transform: translateY(1px);
+}
+
+/* 영역 스타일 */
+.area {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 몬스터 선택 스타일 */
+.monster-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.monster-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.monster-btn:hover {
+    background-color: #2980b9;
+}
+
+/* 전투 영역 스타일 */
+.battle-characters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 200px;
+}
+
+.player-character, .monster-character {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-character img {
+    max-height: 180px;
+    max-width: 100%;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.monster-character img {
+    max-height: 360px;
+    max-width: 100%;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.player-character img {
+    transform: scaleX(-1); /* 플레이어 이미지 좌우반전 */
+}
+
+/* 플레이어 공격 애니메이션 */
+@keyframes playerAttack {
+    0% { transform: scaleX(-1) translateX(0); }
+    50% { transform: scaleX(-1) translateX(-275px); }
+    100% { transform: scaleX(-1) translateX(0); }
+}
+
+.player-attack {
+    animation: playerAttack 0.5s ease;
+}
+
+/* 몬스터 공격 애니메이션 */
+@keyframes monsterAttack {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-275px); }
+    100% { transform: translateX(0); }
+}
+
+.monster-attack {
+    animation: monsterAttack 0.5s ease;
+}
+
+.battle-status {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #eaeaea;
+    border-radius: 8px;
+}
+
+.player-status, .monster-status {
+    flex: 1;
+    padding: 10px;
+}
+
+.hp-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.hp-bar {
+    height: 100%;
+    background-color: #2ecc71;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.battle-log {
+    height: 150px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.battle-log p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.action-btn {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.action-btn:hover {
+    background-color: #c0392b;
+}
+
+/* 훈련 영역 스타일 */
+.training-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.training-option {
+    padding: 15px;
+    background-color: #eaeaea;
+    border-radius: 8px;
+}
+
+.training-option h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.train-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.train-btn:hover {
+    background-color: #8e44ad;
+}
+
+/* 플레이어 스탯 스타일 */
+.player-stats {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+/* 돌아가기 버튼 스타일 */
+.back-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    background-color: #7f8c8d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.back-btn:hover {
+    background-color: #6c7a7d;
+}
+
+/* 게임 클리어 스타일 */
+#game-clear {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f1c40f;
+    color: #333;
+}
+
+#game-clear h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#game-clear p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#restart-btn {
+    background-color: #e67e22;
+}
+
+#restart-btn:hover {
+    background-color: #d35400;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .main-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .battle-status {
+        flex-direction: column;
+    }
+    
+    .player-stats {
+        position: static;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.area:not(.hidden) {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 전투 효과 */
+.damage-text {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.heal-text {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.victory-text {
+    color: #f1c40f;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.defeat-text {
+    color: #7f8c8d;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
